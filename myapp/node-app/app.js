@@ -19,6 +19,7 @@ async function connectDB() {
 connectDB();
 
 const server = http.createServer(async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
   if (!db) {
     res.write("DB not ready");
     return res.end();
